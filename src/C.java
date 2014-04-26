@@ -5,8 +5,8 @@ public class C {
 	public static double kb=8.617385*EE(-5); //Boltzmann's Constant (eV/K)
 	public static double mo=9.909389*EE(-28); //Electron Rest Mass (g)
 	public static double eo=8.854187*EE(-14); //Dielectric Permittivity of Vacuum (F/cm)
-	public static double esi=11.7*eo; //Dielectric Permeability of Silicon (F/cm)
-	public static double eox=3.9*eo; //Dielectric Permeability of Silicon Dioxide (F/cm)
+	public static double esi=11.7*eo; //Dielectric Permittivity of Silicon (F/cm)
+	public static double eox=3.9*eo; //Dielectric Permittivity of Silicon Dioxide (F/cm)
 	public static double Navo=6.022136*EE(23); //Avogadro's Number (mole-1)
 	public static double eV=1.602177*EE(-19); //Electron Volt (J)
 	public static double hJ=6.626075*EE(-34); //Plank's Constant in joules*s. slide 1.5
