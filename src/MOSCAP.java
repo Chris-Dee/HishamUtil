@@ -12,8 +12,8 @@ public static double phiFb(double Na){
 	return C.s(a);
 }
 public static double Cox(double Xox){
-	double a=  C.esi/Xox;
-	System.out.print("hehehehe Cocks: ");
+	double a=  C.eox/Xox;
+	System.out.print(Xox+" hehehehe Cocks: ");
 	
 	return C.s(a);
 }
