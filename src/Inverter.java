@@ -42,7 +42,7 @@ public class Inverter {
 		System.out.print("Maximum Power Dissipation: ");
 		return C.s(Iddmax(Vdd, Vol, Rd)*Vdd);
 	}
-	
+
 	//Calculating Vout at Transition Point
 	public static void Voutb(double Vdd, double Kn, double Rd){
 		double a = (Kn*Rd)/2;
@@ -59,5 +59,4 @@ public class Inverter {
 		System.out.print("Vout2: ");
 		System.out.print(((-1 * b) - Math.sqrt(discriminant)) / (2 * a));
 	}
-	
 }
