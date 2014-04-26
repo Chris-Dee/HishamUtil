@@ -9,12 +9,6 @@ public static double phiFb(double Na){
 public static double Cox(double Xox){
 	return C.esi/Xox;
 }
-public static double EoxFB(double QfQit, double Xox){
-	return QfQit/C.eox;
-}
-public static double VoxFB(double Xox, double QfQit){
-	return -QfQit/Cox(Xox);
-}
 public static double Vfb(double Na,double Xox, double QfQit){
 	return PhiPm(Na)-QfQit/Cox(Xox);
 }
