@@ -1,24 +1,32 @@
 
 public class MOSCAP {
 public static double PhiPm(double Na){
+	double a= -0.51165-C.kbtq*Math.log(Na/C.ni);
 	System.out.print("Phi pm, Voltage difference to metal contact: ");
-	return C.s( -0.51165-C.kbtq*Math.log(Na/C.ni));
+	return C.s(a);
 }
 public static double phiFb(double Na){
+	double a= C.kbtq*Math.log(Na/C.ni);
 	System.out.print("phi fb: ");
-	return C.s( C.kbtq*Math.log(Na/C.ni));
+	
+	return C.s(a);
 }
 public static double Cox(double Xox){
+	double a=  C.esi/Xox;
 	System.out.print("hehehehe Cocks: ");
-	return C.s( C.esi/Xox);
+	
+	return C.s(a);
 }
 public static double Vfb(double Na,double Xox, double QfQit){
+	double a=  PhiPm(Na)-QfQit/Cox(Xox);
 	System.out.print("Flat Band Voltage: ");
-	return C.s( PhiPm(Na)-QfQit/Cox(Xox));
+	return C.s(a);
 }
 public static double Vtn(double Na, double QfQit, double Xox){
-	System.out.print("Threshold Voltage ");
-	return C.s( Vfb(Na,Xox,QfQit)+2*phiFb(Na)+Math.sqrt(2*C.q*C.esi*Na*phiFb(Na))/Cox(Xox));
+	double a= Vfb(Na,Xox,QfQit)+2*phiFb(Na)+Math.sqrt(4*C.q*C.esi*Na*phiFb(Na))/Cox(Xox);
+	System.out.print("Threshold Voltage: ");
+	
+	return C.s(a);
 }
 //Capacitances
 }

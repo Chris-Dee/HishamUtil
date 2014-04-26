@@ -28,6 +28,7 @@ public class C {
 
 	public static Double s(double d){
 		System.out.println(d);
+		
 		return d;
 	}
 
