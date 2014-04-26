@@ -47,8 +47,12 @@ public class MOSFET {
 		return C.s(result);
 	}
 	
-	public static double IDsat(){
-		return 0;
+	public static double IDsat(double lambda, double Kn, double VDS, double VGS, double VBS, double Na,double Xox, double QfQit){
+		double vtn = Vtn(VBS, Na, Xox, QfQit);
+		double vdsat = VDsat(VGS, VBS, Na, Xox, QfQit);
+		double result = (Kn/2)*C.p((VGS - vtn),2) * (1 + lambda*(VDS - vdsat));
+		System.out.print("The drain current in the saturation range for the MOSFET is (A): ");
+		return C.s(result);
 	}
 	
 }
