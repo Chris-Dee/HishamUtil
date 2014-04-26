@@ -26,7 +26,11 @@ public class DepletionMOSCAP extends MOSCAP{
 		return C.s( Eox(Na,Vgs,Xox,QfQit)*Xox);	
 	}
 	public static double  Vgb(double Na, double Vgs, double Xox, double QfQit){
-		System.out.println("Gate to bulk voltage: ");
+		System.out.print("Gate to bulk voltage: ");
 		return C.s( -Qsc(Na,Vgs,Xox,QfQit)/Cox(Xox)+Vsc(Vgs,Na,Xox,QfQit)+Vfb(Na,Xox,QfQit));
+	}
+	public static double Csc(double Na,double Vgs,double Xox, double QfQit){
+		System.out.print("Space charge capacitance: ");
+		return C.s(C.esi/(Wd(Na,Vgs,Xox,QfQit)));
 	}
 	}

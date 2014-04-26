@@ -14,4 +14,8 @@ public class Accumulation extends MOSCAP {
 		System.out.print("Charge on the gate: ");
 		return C.s( Cox(Xox)*(Vgb-PhiPm(Na)));
 	}
+	public static double Cgb(double Xox){
+		System.out.print("Gate to Bulk capacitance: ");
+		return C.s(Cox(Xox));
+	}
 }
