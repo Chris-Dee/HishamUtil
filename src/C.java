@@ -21,8 +21,8 @@ public class C {
 	public static double mn=.320*mo; //Electron Conductivity Effective Mass at 300K
 	public static double mpdos=1.150*mo; //Hole Density of States Effective Mass at 300K
 	public static double mp=.386*mo; //Hole Conductivity Effective Mass at 300K
-	public static double Nc = 2.86E19; //Conduction Band Effective Density of States at 300K
-	public static double Nv = 3.10E19; //Valence Band Effective Density of States at 300K
+	public static double Nc = 2.86E19; //Conduction Band Effective Density of States at 300K (cm-3)
+	public static double Nv = 3.10E19; //Valence Band Effective Density of States at 300K(cm-3)
 	
 	public static double exp(double arg){
 		return p(Math.E,arg);

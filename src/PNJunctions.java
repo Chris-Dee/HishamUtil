@@ -51,9 +51,12 @@ public class PNJunctions {
 	}
 	
 	//Add dioode current density (12 review 2)
+	
+	//Small Signal PN-Junction Diode Depletion Capacitance Per Unit Area
 	public static double depletionCapacitance(double Na, double Nd, double Vpn){
 		System.out.print("Depletion region capacitance value: ");
 		return C.s( Math.sqrt((C.q*C.esi*Na*Nd)/(2*(Na+Nd)*(Vbi(Na,Nd)-Vpn))));
 	}
+	
 	//other capacitances on 22. Get a lotta ugly stuff in there
 }
