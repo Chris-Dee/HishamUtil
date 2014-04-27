@@ -1,42 +1,55 @@
 
 public class PNJunctions {
 
+	//Built in Voltage
 	public static double Vbi(double Na, double Nd){
 		System.out.print("built in voltage: ");
 		return C.s( C.kbtq*Math.log((Na*Nd)/C.p(C.ni,2)));
 	}
+
+	//Depletion Region Width of PNJunction
 	public static double Wd(double Na, double Nd,double Vpn){
-	System.out.print("Depletion width: ");
+		System.out.print("Depletion width: ");
 		return C.s( Math.sqrt((2*C.esi*(Na+Nd)*(Vbi(Na,Nd)-Vpn))/(C.q*Na*Nd)));
 	}
+
+	//Depletion Region Width on P-Side
 	public static double Wdp(double Na, double Nd,double Vpn){
-	System.out.print("Depletion width on p-side: ");
+		System.out.print("Depletion width on p-side: ");
 		return C.s( (Nd*Wd(Na,Nd,Vpn))/(Na+Nd));
 	}
+
+	//Depletion Region Width on N-Side
 	public static double Wdn(double Na, double Nd, double Vpn){
 		System.out.print("Depletion region width on n-side: ");
 		return(Na*Wd(Na,Nd,Vpn))/(Na+Nd);
 	}
+
+	//Maximum Electric Field at x=0
 	public static double zeroField(double Na,double Nd,double Vpn){
 		System.out.print("Field when x=0. The max field: ");
 		return C.s((C.q*Na*Wdp(Na,Nd,Vpn))/C.esi);
-		
+
 	}
+
+	//Law of the Junction. Calculated Minority Carrier Concentrations at the P Depletion Region Edges
 	public static double lawOfJunctionP(double Na, double Nd, double Vpn){
 		System.out.print("Concentration of holes at thermal equilibrium: ");
 		double Pno= C.s(Nd/(C.p(C.ni, 2)));
 		System.out.println(Pno);
 		System.out.print("Holes at Depletion region edge: ");
 		return C.s(Pno*C.exp((Vpn)/C.kbtq));
-		
+
 	}
-		
-		public static double lawOfJunctionN(double Na, double Nd, double Vpn){
-			double Npo=Na/(C.p(C.ni, 2));
-			System.out.println("Npo= "+Npo);
-			System.out.print("Electrons at Depletion Region: ");
-			return C.s(Npo*C.exp((Vpn)/C.kbtq));
-		}
+
+	//Law of the Junction. Calculated Minority Carrier Concentrations at the N Depletion Region Edges
+	public static double lawOfJunctionN(double Na, double Nd, double Vpn){
+		double Npo=Na/(C.p(C.ni, 2));
+		System.out.println("Npo= "+Npo);
+		System.out.print("Electrons at Depletion Region: ");
+		return C.s(Npo*C.exp((Vpn)/C.kbtq));
+	}
+	
 	//Add dioode current density (12 review 2)
 	public static double depletionCapacitance(double Na, double Nd, double Vpn){
 		System.out.print("Depletion region capacitance value: ");

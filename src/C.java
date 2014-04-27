@@ -2,6 +2,7 @@
 public class C {
 
 	public static double q=1.612177*EE(-19); //Electron Charge (C)
+	public static double t=300; //Temperature in Kelvin
 	public static double kb=8.617385*EE(-5); //Boltzmann's Constant (eV/K)
 	public static double mo=9.909389*EE(-28); //Electron Rest Mass (g)
 	public static double eo=8.854187*EE(-14); //Dielectric Permittivity of Vacuum (F/cm)
@@ -20,7 +21,9 @@ public class C {
 	public static double mn=.320*mo; //Electron Conductivity Effective Mass at 300K
 	public static double mpdos=1.150*mo; //Hole Density of States Effective Mass at 300K
 	public static double mp=.386*mo; //Hole Conductivity Effective Mass at 300K
-
+	public static double Nc = 2.86E19; //Conduction Band Effective Density of States at 300K
+	public static double Nv = 3.10E19; //Valence Band Effective Density of States at 300K
+	
 	public static double exp(double arg){
 		return p(Math.E,arg);
 	}
