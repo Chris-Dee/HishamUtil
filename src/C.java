@@ -13,8 +13,9 @@ public class C {
 	public static double hEV=4.135669*EE(-15); //Plank's Constant in eV*s slide 1.5
 	public static double hbarJ=1.054572*EE(-34); //Reduced Plank's Constant (J*s)
 	public static double hbarEV=6.582122*EE(-16); //Reduced Plank's Constant (eV*s)
-	public static double kbtq=0.02585; //(kvT/q) (V) 
+	public static double kbtq=0.02585; //(kbT/q) (V) 
 	public static double latticeSi=5.4037; //Lattice Constant in angstroms. rest are on 1.7
+	public static double EgSi=1.1242; //Energy Gap in Si (Ec-Ev) at 300K (eV)
 	public static double ni=1.07*EE(10); //Intrinsic Carrier Concentration (cm-3)
 	public static double mndos=1.090*mo; //Electron Density of States Effective Mass at 300K
 	public static double mn=.320*mo; //Electron Conductivity Effective Mass at 300K
