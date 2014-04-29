@@ -50,7 +50,8 @@ public class PNJunctions {
 		return C.s(Npo*C.exp((Vpn)/C.kbtq));
 	}
 	
-	//Add dioode current density (12 review 2)
+	/**PN-Junction Diode Current Density (12 review 2) */
+	//Add this 
 	//Add diode current 
 	
 	/**Small Signal PN-Junction Diode Depletion Capacitance Per Unit Area */
@@ -59,5 +60,10 @@ public class PNJunctions {
 		return C.s( Math.sqrt((C.q*C.esi*Na*Nd)/(2*(Na+Nd)*(Vbi(Na,Nd)-Vpn))));
 	}
 	
+	/**Small Signal Diffusion Capacitance On N-Side Per Unit Area */
+	public static double nCapacitance(double Nd, double Vpn){
+		System.out.print("N-Side Region Capacitance Value: ");
+		return C.s((C.p(C.q, 2)*C.p(C.ni,2)*Physics.L_pN(D_pN, tau_recN))/(C.kb*C.t*Nd)*C.exp((C.q*Vpn)/(C.kb*C.t)));
+	}
 	//other capacitances on 22. Get a lotta ugly stuff in there
 }

@@ -1,5 +1,6 @@
 
 public class DepletionMOSCAP extends MOSCAP{
+	//Depletion Bias Range for MOSCAP
 	public static double Vsc(double Vgs,double Na, double Xox, double QfQit){
 		System.out.print("Space charge voltage: ");
 		return C.s( Vgs-Vfb(Na,Xox,QfQit)+(C.q*C.esi*Na)/C.p(Cox(Xox), 2)

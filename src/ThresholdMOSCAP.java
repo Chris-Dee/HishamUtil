@@ -1,5 +1,6 @@
 
 public class ThresholdMOSCAP extends MOSCAP {
+	//At the Threshold Voltage for MOSCAP
 	public static double Vtn(double Na,double QfQit,double Xox){
 		System.out.print("Threshold Voltage: ");
 		return C.s( Vfb(Na,Xox,QfQit)+2*phiFb(Na)+Math.sqrt(2*C.q*C.esi*Na*phiFb(Na))/Cox(Xox));

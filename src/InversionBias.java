@@ -1,6 +1,7 @@
 
 public class InversionBias extends MOSCAP {
 
+	//InversionBias Range for MOSCAP
 	public static double Qdep(double Na){
 		System.out.print("Depletion region charge: ");
 		return C.s(-Math.sqrt(4*C.q*C.esi*Na*phiFb(Na)));

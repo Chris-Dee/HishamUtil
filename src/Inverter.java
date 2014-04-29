@@ -36,6 +36,29 @@ public class Inverter {
 		return C.s(result);
 	}
 
+	/**Equation of V input low */
+	public static double Vil(double Vtn, double Kn, double Rl){
+		System.out.print("Vil(V input low) (V): ");
+		return C.s(Vtn+1/(Kn*Rl));
+	}
+	
+	/**Equation for V input high */
+	public static double Vih(double Vtn, double Vdd, double Kn, double Rl){
+		System.out.print("Vih(V input high) (V): ");
+		return C.s(Vtn-1/(Kn*Rl)+C.p((8*Vdd)/(3*Kn*Rl), 1/2));
+	}
+	
+	/**Equation for Static Noise Margin Low */
+	public static double SNMl(double Vtn, double Vdd, double Kn, double Rl){
+		return C.s(2*Vtn-Vdd+Math.sqrt(C.p(Vdd-Vtn+1/(Kn*Rl), 2)-(2*Vdd)/(Kn*Rl)));
+	}
+	
+	/**Equation for Static Noise Margin High*/
+	public static double SNMh(double Vdd, double Vtn, double Kn, double Rl){
+		System.out.print("Static noise margin low: ");
+		return C.s(Vdd-Vtn+1/(Kn*Rl)-C.p((8*Vdd)/(3*Kn*Rl), 1/2));
+	}
+	
 	/** Maximum Drain Current */
 	public static double Iddmax(double Vdd, double Vol, double Rd){
 		double result = (Vdd-Vol)/Rd;

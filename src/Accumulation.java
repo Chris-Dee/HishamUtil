@@ -1,7 +1,9 @@
 
 public class Accumulation extends MOSCAP {
 
+	//Accumulation Bias Range for MOSCAP
 	//Vgb<Vfb
+	
 	public static double Eox(double Vgb, double Na, double Nd, double Xox){
 		System.out.print("Electric field in the oxide: ");
 		return C.s( (Vgb-PhiPm(Na))/Xox);
