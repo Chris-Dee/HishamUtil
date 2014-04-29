@@ -5,7 +5,12 @@ public class Runner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
 		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
+		//System.out.println(MOSFET.IDlin(5, 3, 6, 7, 8, 9, 10));
+		//System.out.println("yay "+MOSCAP.Vtn(1.2*C.EE(18),3.2*C.EE(10)*C.q,22*C.EE(-8)));
+		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
+<<<<<<< HEAD
 		//System.out.println(MOSFET.IDlin(5, 3, 6, 7, 8, 9, 10));
 		//System.out.println("yay "+MOSCAP.Vtn(1.2*C.EE(18),3.2*C.EE(10)*C.q,22*C.EE(-8)));
 		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
@@ -34,6 +39,13 @@ public class Runner {
 		*/
 		
 		Physics.rho_P(2E16);
+=======
+		MOSCAP.Vtn(1.2*C.EE(18),3.2*C.EE(10)*C.q,22*C.EE(-8));
+		
+		//System.out.println("yay "+MOSCAP.Vfb(1.2*C.EE(18), 22*C.EE(-8), 3.2*C.EE(10)*C.q));
+		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
+
+>>>>>>> 4bb4ad0037dda90ff0856e09db392b6d8784f0bf
 	}
 	
 
