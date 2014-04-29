@@ -5,47 +5,16 @@ public class Runner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
-		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
-		//System.out.println(MOSFET.IDlin(5, 3, 6, 7, 8, 9, 10));
-		//System.out.println("yay "+MOSCAP.Vtn(1.2*C.EE(18),3.2*C.EE(10)*C.q,22*C.EE(-8)));
-		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
-<<<<<<< HEAD
-		//System.out.println(MOSFET.IDlin(5, 3, 6, 7, 8, 9, 10));
-		//System.out.println("yay "+MOSCAP.Vtn(1.2*C.EE(18),3.2*C.EE(10)*C.q,22*C.EE(-8)));
-		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
+		Physics.u_pN(3.25E16);
+		Physics.u_nP(4.5E17);
+		Physics.L_pN(Physics.Dp(437.84, C.t),Physics.tau_recN(3.25E16));
+		Physics.L_nP(Physics.Dn(437.84, C.t), Physics.tau_recP(4.5E17));
+		PNJunctions.Vbi(4.5E17, 3.25E16);
 		
-		//Physics.gc(2*C.kb*300); //needs integration...
-		
-		//double delta_Emin = 4.605170186*C.kb*300;
-		//Physics.fFD(delta_Emin, 300);
-		//Physics.Nc(300); //didn't give right value...
-		
-		//Physics.n_thermaleq(.34106, 300, Physics.NC_300K);
-		//Physics.p_N(5.331440987525044E13);
-		
-		/*
-		double Nd=5E15;
-		Physics.n_N(Nd);
-		Physics.p_N(Nd);
-		System.out.println();
-		double Na=2e18;
-		Physics.p_P(Na);
-		Physics.n_P(Na);
-		System.out.println();
-		Nd=2E20;
-		Physics.n_N(Nd);
-		Physics.p_N(Nd);
-		*/
-		
-		Physics.rho_P(2E16);
-=======
-		MOSCAP.Vtn(1.2*C.EE(18),3.2*C.EE(10)*C.q,22*C.EE(-8));
-		
-		//System.out.println("yay "+MOSCAP.Vfb(1.2*C.EE(18), 22*C.EE(-8), 3.2*C.EE(10)*C.q));
-		//System.out.println(PNJunctions.Vbi(500*C.EE(15), 400*C.EE(17)));
-
->>>>>>> 4bb4ad0037dda90ff0856e09db392b6d8784f0bf
+		MOSCAP.PhiPm(2.5E16);
+		Amplifiers.gmsat(120E-6, 3.69, 0.40);
+		Amplifiers.Idq(120E-6, 3.69, 0.40);
+		Inverter.Vol(3.3, 0.5, 250E-6, 15000);
 	}
 	
 
