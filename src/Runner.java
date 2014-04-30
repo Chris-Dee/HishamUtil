@@ -15,6 +15,10 @@ public class Runner {
 		Amplifiers.gmsat(120E-6, 3.69, 0.40);
 		Amplifiers.Idq(120E-6, 3.69, 0.40);
 		Inverter.Vol(3.3, 0.5, 250E-6, 15000);
+		
+		MOSFET.vtn0(1.2E18, 22E-8, 3.2E10*C.q);
+		MOSFET.VDsat(1.2, 0, 1.2E18, 22E-8, 3.2E10*C.q);
+		MOSFET.IDsat(0, 154.11*MOSCAP.Cox(22E-8)*(4/.1),0.8409462560512138+0.5 , 1.2, 0, 1.2E18, 22E-8,3.2E10*C.q);
 	}
 	
 

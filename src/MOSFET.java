@@ -1,6 +1,7 @@
 
 public class MOSFET {
 
+	/**MOSFET Threshold Voltage. QfQit = Qf+Qit */
 	public static double Vtn(double VBS, double Na,double Xox, double QfQit) {
 		
 		double phifb = MOSCAP.phiFb(Na);
@@ -9,6 +10,7 @@ public class MOSFET {
 		return C.s(result);
 	}
 	
+	/**MOSFET Threshold Voltage at Vbs=0. QfQit = Qf+Qit */
 	public static double vtn0(double Na,double Xox, double QfQit){
 		double result = Vtn(0, Na, Xox, QfQit);
 		System.out.print("The MOSFET threshold voltage at V_BS=0 is (V): ");
@@ -21,6 +23,7 @@ public class MOSFET {
 		return C.s(result);
 	}
 	
+	/**Vdsat. Drain to Source Saturation Voltage */
 	public static double VDsat(double VGS, double VBS, double Na,double Xox, double QfQit){
 		double vtn = Vtn(VBS, Na, Xox, QfQit);
 		double result = VGS - vtn;
@@ -34,12 +37,14 @@ public class MOSFET {
 		return C.s(result);
 	}
 	
+	/**Calculate Kn */
 	public static double Kn(double mu, double W, double L, double Xox){
 		double result = mu * MOSCAP.Cox(Xox) * (W/L);
 		System.out.print("K_n for the MOSFET is: ");
 		return C.s(result);
 	}
 	
+	/**Calculating the Drain Current in the Linear Range */
 	public static double IDlin(double Kn, double VDS, double VGS, double VBS, double Na,double Xox, double QfQit){
 		double vtn = Vtn(VBS, Na, Xox, QfQit);
 		double result = Kn*(((VGS-vtn)*VDS) - 0.5*(C.p(VDS, 2)));
@@ -47,6 +52,7 @@ public class MOSFET {
 		return C.s(result);
 	}
 	
+	/**Calculating the Drain Current in the Saturation Range */
 	public static double IDsat(double lambda, double Kn, double VDS, double VGS, double VBS, double Na,double Xox, double QfQit){
 		double vtn = Vtn(VBS, Na, Xox, QfQit);
 		double vdsat = VDsat(VGS, VBS, Na, Xox, QfQit);

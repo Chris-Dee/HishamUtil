@@ -50,15 +50,28 @@ public class Inverter {
 	
 	/**Equation for Static Noise Margin Low */
 	public static double SNMl(double Vtn, double Vdd, double Kn, double Rl){
+		System.out.print("Static Noise Margin Low: ");
 		return C.s(2*Vtn-Vdd+Math.sqrt(C.p(Vdd-Vtn+1/(Kn*Rl), 2)-(2*Vdd)/(Kn*Rl)));
 	}
 	
 	/**Equation for Static Noise Margin High*/
 	public static double SNMh(double Vdd, double Vtn, double Kn, double Rl){
-		System.out.print("Static noise margin low: ");
+		System.out.print("Static Noise margin High: ");
 		return C.s(Vdd-Vtn+1/(Kn*Rl)-C.p((8*Vdd)/(3*Kn*Rl), 1/2));
 	}
 	
+	/**Equation for Static Current at Vin=Voh */
+	public static double IddVoh(double Vtn, double Vdd, double Kn, double Rl){
+		System.out.print("Static Currenat At Vin = Voh: ");
+		return C.s((Vtn-1/(Kn*Rl)+Math.sqrt(C.p(Vdd-Vtn+1/(Kn*Rl), 2)-(2*Vdd)/(Kn*Rl)))/Rl);
+	}
+	
+	/**Equation for Static Power at Vin=Voh */
+	public static double PddVoh(double Vtn, double Vdd, double Kn, double Rl){
+		System.out.print("Static Power at Vin = Voh: "); 
+		return C.s((Vdd/Rl)*(Vtn-1/(Kn*Rl)+Math.sqrt(C.p(Vdd-Vtn+1/(Kn*Rl), 2)-(2*Vdd)/(Kn*Rl))));
+	}
+
 	/** Maximum Drain Current */
 	public static double Iddmax(double Vdd, double Vol, double Rd){
 		double result = (Vdd-Vol)/Rd;
